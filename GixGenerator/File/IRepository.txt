@@ -1,0 +1,8 @@
+﻿using #{ProjectName}.Models;
+
+namespace #{ProjectName}.IRepository
+{
+    public interface I#{Name}Repository : IBaseRepository<#{Name}>
+    {
+    }
+}

@@ -1,0 +1,12 @@
+﻿using #{ProjectName}.IRepository;
+using #{ProjectName}.Models;
+
+namespace #{ProjectName}.Repository
+{
+    public class #{Name}Repository : BaseRepository<#{Name}>, I#{Name}Repository
+    {
+        public #{Name}Repository(#{DBContext} context) : base(context)
+        {
+        }
+    }
+}

@@ -1,0 +1,8 @@
+﻿using #{ProjectName}.Models;
+
+namespace #{ProjectName}.IService
+{
+    public interface I#{Name}Service : IBaseService<#{Name}>
+    {
+    }
+}
