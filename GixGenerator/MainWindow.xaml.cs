@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeGener.Common;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,10 +32,10 @@ namespace GixGenerator
         {
 
             InitializeComponent();
-            iservicePatht = iservice.Text;
-            servicePatht = service.Text;
-            irepositoryPatht = irepository.Text;
-            repositoryPatht = repository.Text;
+            iservicePatht = ConfigHelper.IServicePath;
+            servicePatht = ConfigHelper.ServicePath;
+            irepositoryPatht = ConfigHelper.IRepositoryPath;
+            repositoryPatht = ConfigHelper.RepositoryPath;
         }
 
 
@@ -45,7 +46,7 @@ namespace GixGenerator
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string className = "User";
+            string className = tbox_class_name.Text;
 
             if (!Directory.Exists(irepositoryPatht))
             {
@@ -76,7 +77,7 @@ namespace GixGenerator
 
 
             //var te = addr1.Text;
-            MessageBox.Show($"生成成功{iservicePatht}");
+            MessageBox.Show($"生成成功");
         }
 
 
@@ -100,11 +101,11 @@ namespace GixGenerator
                 {
                     var content = GetContent(repositoryPatht + "/" + NextFile.Name);
                     //匹配一个类中所有函数
-                    //MatchCollection matches=Regex.Matches(content, "public\\s{1,50}(?!class).{1,300}\\s{1,50}(\\w{1,50})\\(");
-                    MatchCollection matches = Regex.Matches(content, "(?s)(?<all>(\\s{0,200}}\\s\n|}\n)\\s{0,100}(}\\s{1,200}|}))$");
+                    MatchCollection matches=Regex.Matches(content, "public\\s{1,50}(?!class).{1,300}\\s{1,50}(\\w{1,50})\\(");
+                    //MatchCollection matches = Regex.Matches(content, "(?s)(?<all>(\\s{0,200}}\\s\n|}\n)\\s{0,100}(}\\s{1,200}|}))$");
                     //var ss = matches["all"].ToString();
                     var temp = (matches[0] as Match).Groups["all"].ToString();
-                    content = content.Replace(temp, "");
+                    //content = content.Replace(temp, "");
                     foreach (Match item in matches)
                     {
                         var ss = item.Groups["all"].ToString();
@@ -322,8 +323,12 @@ namespace GixGenerator
             return contents;
         }
 
+
         #endregion
 
-
+        private void Btn_TeConfig_Click(object sender, RoutedEventArgs e)
+        {
+            ConfigHelper.SetValue("IRepositoryPath", @"D:\Resource\www\Managix\Raikay.Managix.IRepository");
+        }
     }
 }

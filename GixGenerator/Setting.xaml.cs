@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeGener.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,17 @@ namespace GixGenerator
     /// </summary>
     public partial class Setting : Window
     {
+        //public string iservicePatht;
+        //public string servicePatht;
+        //public string irepositoryPatht;
+        //public string repositoryPatht;
         public Setting()
         {
             InitializeComponent();
+            iservice.Text = ConfigHelper.IServicePath;
+            service.Text = ConfigHelper.ServicePath;
+            irepository.Text = ConfigHelper.IRepositoryPath;
+            repository.Text = ConfigHelper.RepositoryPath;
         }
 
         private void BtnSaveSetting_Click(object sender, RoutedEventArgs e)
