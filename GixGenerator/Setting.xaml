@@ -5,20 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GixGenerator"
         mc:Ignorable="d"
-        Title="Setting" Height="262.264" Width="540.566">
+        Title="Setting" Height="251.264" Width="491.566">
     <Grid>
-        <TextBox x:Name="irepository" HorizontalAlignment="Left" Height="23" Margin="127,21,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
-        <TextBox  x:Name="repository" HorizontalAlignment="Left" Height="21" Margin="127,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
-        <TextBox  x:Name="iservice" HorizontalAlignment="Left" Height="21" Margin="127,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
-        <TextBox  x:Name="service" HorizontalAlignment="Left" Height="21" Margin="127,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
-        <Button Content="保存" x:Name="BtnSaveSetting" HorizontalAlignment="Left" Margin="442,168,0,0" VerticalAlignment="Top" Width="75" Height="31" Click="BtnSaveSetting_Click" />
-        <Label Content="IRepository" HorizontalAlignment="Left" Margin="54,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="Repository" HorizontalAlignment="Left" Margin="54,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="IService" HorizontalAlignment="Left" Margin="54,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="Service" HorizontalAlignment="Left" Margin="54,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="36,23,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="36,59,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="36,95,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="36,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.6,1.667"/>
+        <TextBox x:Name="irepository" HorizontalAlignment="Left" Height="23" Margin="83,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
+        <TextBox  x:Name="repository" HorizontalAlignment="Left" Height="21" Margin="83,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
+        <TextBox  x:Name="iservice" HorizontalAlignment="Left" Height="21" Margin="83,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
+        <TextBox  x:Name="service" HorizontalAlignment="Left" Height="21" Margin="83,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
+        <Button Content="保存" x:Name="BtnSaveSetting" HorizontalAlignment="Left" Margin="398,170,0,0" VerticalAlignment="Top" Width="75" Height="31" Click="BtnSaveSetting_Click" />
+        <Label Content="IRepository" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="Repository" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="IService" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="Service" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
     </Grid>
 </Window>

@@ -1,15 +1,21 @@
-﻿using #{ProjectName}.IRepository;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+using #{ProjectName}.IRepository;
 using #{ProjectName}.IService;
 using #{ProjectName}.Models;
 
+
+
 namespace #{ProjectName}.Service
 {
-    public class #{Name}Service : BaseService<#{Name}>, I#{Name}Service
+    public class #{Name}Service //: BaseService<#{Name}>, I#{Name}Service
     {
         private readonly I#{Name}Repository _curentRepo;
-        public #{Name}Service(IUserRepository curentRepo)
+        public #{Name}Service(I#{Name}Repository curentRepo)
         {
-            base.BaseRepository = curentRepo;//如果要用基类封装的方法必须传值
+            //base.BaseRepository = curentRepo;//如果要用基类封装的方法必须传值
             _curentRepo = curentRepo;
         }
     }

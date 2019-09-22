@@ -6,32 +6,26 @@
         xmlns:local="clr-namespace:GixGenerator"
         mc:Ignorable="d"
 
-        Title="GixGenerator" Height="510.279" Width="562.12">
+        Title="GixGenerator" Height="206.476" Width="452.969">
     <Grid>
 
-        <Button Content="生成" HorizontalAlignment="Left" Margin="435,147,0,0" VerticalAlignment="Top" Width="75" Height="31" Click="Button_Click"/>
-        <Label Content="IRepository" HorizontalAlignment="Left" Margin="223,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="Repository" HorizontalAlignment="Left" Margin="339,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="IService" HorizontalAlignment="Left" Margin="47,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="Service" HorizontalAlignment="Left" Margin="141,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="类名" HorizontalAlignment="Left" Margin="21,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.865,4.361"/>
-        <TextBox x:Name="tbox_class_name" HorizontalAlignment="Left" Height="18" Margin="53,94,0,0" TextWrapping="Wrap" Text="User" VerticalAlignment="Top" Width="118"/>
+        <Button Content="根据类名生成" HorizontalAlignment="Left" Margin="256,118,0,0" VerticalAlignment="Top" Width="79" Height="31" Click="Button_Click"/>
+        <Label Content="IRepository" HorizontalAlignment="Left" Margin="233,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="Repository" HorizontalAlignment="Left" Margin="349,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="IService" HorizontalAlignment="Left" Margin="57,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="Service" HorizontalAlignment="Left" Margin="151,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="类名" HorizontalAlignment="Left" Margin="31,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.865,4.361"/>
+        <TextBox x:Name="tbox_class_name" HorizontalAlignment="Left" Height="21" Margin="63,39,0,0" TextWrapping="Wrap" Text="User" VerticalAlignment="Top" Width="118"/>
 
-        <Button x:Name="BtnDoFile" Content="遍历文件" HorizontalAlignment="Left" Margin="374,10,0,0" VerticalAlignment="Top" Width="75" Height="31" Click="BtnDoFile_Click" />
+        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="215,74,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="331,74,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="37,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.479,1.089"/>
+        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="133,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.6,1.667"/>
+        <Button Content="生成Model" HorizontalAlignment="Left" Margin="37,118,0,0" VerticalAlignment="Top" Width="83" Height="31"/>
 
-        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="205,129,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="321,129,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="27,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.479,1.089"/>
-        <CheckBox Content="" HorizontalAlignment="Left" IsChecked="True" Margin="123,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.6,1.667"/>
-        <Button Content="根据接口生成" HorizontalAlignment="Left" Margin="41,10,0,0" VerticalAlignment="Top" Width="83" Height="31"/>
-        <Button Content="测试配置文件" Name="Btn_TeConfig" HorizontalAlignment="Left" Margin="154,10,0,0" VerticalAlignment="Top" Width="83" Height="31" Click="Btn_TeConfig_Click"/>
+        <Button Content="根据接口生成" x:Name="BtnGetApiName" HorizontalAlignment="Left" Margin="143,118,0,0" VerticalAlignment="Top" Width="83" Height="31" Click="BtnGetApiName_Click" RenderTransformOrigin="0.75,0.532"/>
+        <Button Content="设置" HorizontalAlignment="Left" Margin="373,118,0,0" VerticalAlignment="Top" Width="48" Height="31" x:Name="BtnSetting" Click="BtnSetting_Click"/>
 
-        <Button Content="根据接口生成" x:Name="BtnGetApiName" HorizontalAlignment="Left" Margin="270,10,0,0" VerticalAlignment="Top" Width="83" Height="31" Click="BtnGetApiName_Click"/>
-        <Button Content="设置" HorizontalAlignment="Left" Margin="474,10,0,0" VerticalAlignment="Top" Width="48" Height="31" x:Name="BtnSetting" Click="BtnSetting_Click"/>
-        <GroupBox Header="根据类名生成文件" HorizontalAlignment="Left" Height="133" Margin="10,68,0,0" VerticalAlignment="Top" Width="522">
-            
-            
-        </GroupBox>
 
 
     </Grid>

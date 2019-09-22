@@ -13,21 +13,25 @@ namespace CodeGener.Common
         public static string IServicePath
         {
             get { return GetValue("IServicePath"); }
+            set { SetValue("IServicePath", value); }
         }
 
         public static string ServicePath
         {
             get { return GetValue("ServicePath"); }
+            set { SetValue("ServicePath", value); }
         }
 
         public static string IRepositoryPath
         {
             get { return GetValue("IRepositoryPath"); }
+            set { SetValue("IRepositoryPath", value); }
         }
 
         public static string RepositoryPath
         {
             get { return GetValue("RepositoryPath"); }
+            set { SetValue("RepositoryPath", value); }
         }
 
         /// <summary>
@@ -38,7 +42,7 @@ namespace CodeGener.Common
         public static void SetValue(string AppKey, string AppValue)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            
+
             if (config.AppSettings.Settings[AppKey] != null)
                 config.AppSettings.Settings[AppKey].Value = AppValue;
             else

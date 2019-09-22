@@ -1,4 +1,8 @@
-﻿using #{ProjectName}.IRepository;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+using #{ProjectName}.IRepository;
 using #{ProjectName}.Models;
 
 namespace #{ProjectName}.Repository

@@ -35,6 +35,11 @@ namespace GixGenerator
 
         private void BtnSaveSetting_Click(object sender, RoutedEventArgs e)
         {
+            ConfigHelper.IServicePath = iservice.Text;
+            ConfigHelper.ServicePath = service.Text;
+            ConfigHelper.IRepositoryPath = irepository.Text;
+            ConfigHelper.RepositoryPath = repository.Text;
+
             MessageBox.Show("保存成功");
         }
     }
