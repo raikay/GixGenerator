@@ -27,20 +27,28 @@ namespace GixGenerator
         public Setting()
         {
             InitializeComponent();
-            iservice.Text = ConfigHelper.IServicePath;
-            service.Text = ConfigHelper.ServicePath;
-            irepository.Text = ConfigHelper.IRepositoryPath;
-            repository.Text = ConfigHelper.RepositoryPath;
+            tbox_iservice.Text = ConfigHelper.IServicePath;
+            tbox_service.Text = ConfigHelper.ServicePath;
+            tbox_irepository.Text = ConfigHelper.IRepositoryPath;
+            tbox_repository.Text = ConfigHelper.RepositoryPath;
+            tbox_dbstr.Text = ConfigHelper.DBStr;
+            tbox_modelnamespace.Text = ConfigHelper.NameSpace;
+            tbox_modelfullpath.Text = ConfigHelper.ModelFullPath;
+            cbox_dbtype.Text = ConfigHelper.DBType;
         }
 
         private void BtnSaveSetting_Click(object sender, RoutedEventArgs e)
         {
-            ConfigHelper.IServicePath = iservice.Text;
-            ConfigHelper.ServicePath = service.Text;
-            ConfigHelper.IRepositoryPath = irepository.Text;
-            ConfigHelper.RepositoryPath = repository.Text;
+            ConfigHelper.IServicePath = tbox_iservice.Text;
+            ConfigHelper.ServicePath = tbox_service.Text;
+            ConfigHelper.IRepositoryPath = tbox_irepository.Text;
+            ConfigHelper.RepositoryPath = tbox_repository.Text;
 
+            ConfigHelper.NameSpace = tbox_modelnamespace.Text;
+            ConfigHelper.ModelFullPath = tbox_modelfullpath.Text;
+            ConfigHelper.DBType = cbox_dbtype.Text;
             MessageBox.Show("保存成功");
+            this.Close();
         }
     }
 }

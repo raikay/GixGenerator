@@ -5,16 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GixGenerator"
         mc:Ignorable="d"
-        Title="Setting" Height="251.264" Width="491.566">
+        Title="Setting" Height="378.264" Width="498.566">
     <Grid>
-        <TextBox x:Name="irepository" HorizontalAlignment="Left" Height="23" Margin="83,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
-        <TextBox  x:Name="repository" HorizontalAlignment="Left" Height="21" Margin="83,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
-        <TextBox  x:Name="iservice" HorizontalAlignment="Left" Height="21" Margin="83,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
-        <TextBox  x:Name="service" HorizontalAlignment="Left" Height="21" Margin="83,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
-        <Button Content="保存" x:Name="BtnSaveSetting" HorizontalAlignment="Left" Margin="398,170,0,0" VerticalAlignment="Top" Width="75" Height="31" Click="BtnSaveSetting_Click" />
-        <Label Content="IRepository" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="Repository" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="IService" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="Service" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <TextBox VerticalContentAlignment="Center"  x:Name="tbox_irepository" HorizontalAlignment="Left" Height="23" Margin="119,14,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <TextBox VerticalContentAlignment="Center" x:Name="tbox_repository" HorizontalAlignment="Left" Height="21" Margin="119,52,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <TextBox VerticalContentAlignment="Center" x:Name="tbox_iservice" HorizontalAlignment="Left" Height="21" Margin="119,88,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <TextBox VerticalContentAlignment="Center"  x:Name="tbox_service" HorizontalAlignment="Left" Height="21" Margin="119,123,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <Button Content="保存" x:Name="BtnSaveSetting" HorizontalAlignment="Left" Margin="398,299,0,0" VerticalAlignment="Top" Width="75" Height="31" Click="BtnSaveSetting_Click" />
+        <Label Content="IRepository Path" HorizontalAlignment="Left" Margin="9,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="Repository Path" HorizontalAlignment="Left" Margin="13,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="IService Path" HorizontalAlignment="Left" Margin="30,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="Service Path" HorizontalAlignment="Left" Margin="34,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <TextBox  VerticalContentAlignment="Center"  x:Name="tbox_dbstr"  HorizontalAlignment="Left" Height="21" Margin="119,186,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <Label Content="DBConnectString" HorizontalAlignment="Left" Margin="5,182,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="DBType"  HorizontalAlignment="Left" Margin="59,212,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbox_dbtype" HorizontalAlignment="Left" Margin="119,216,0,0" VerticalAlignment="Top" Width="93">
+            <ComboBoxItem Content="MySql" ></ComboBoxItem>
+            <ComboBoxItem Content="Sqlite"></ComboBoxItem>
+            <ComboBoxItem Content="MSSQL"></ComboBoxItem>
+        </ComboBox>
+        <TextBox  VerticalContentAlignment="Center"  x:Name="tbox_modelnamespace"  HorizontalAlignment="Left" Height="21" Margin="119,245,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <TextBox  VerticalContentAlignment="Center"  x:Name="tbox_modelfullpath"  HorizontalAlignment="Left" Height="21" Margin="120,156,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <Label Content="ModelNameSpace" HorizontalAlignment="Left" Margin="3,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
+        <Label Content="Models Path"  HorizontalAlignment="Left" Margin="33,156,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

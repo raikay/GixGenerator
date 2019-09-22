@@ -27,12 +27,60 @@ namespace CodeGener.Common
             get { return GetValue("IRepositoryPath"); }
             set { SetValue("IRepositoryPath", value); }
         }
-
+        
         public static string RepositoryPath
         {
             get { return GetValue("RepositoryPath"); }
             set { SetValue("RepositoryPath", value); }
         }
+        /// <summary>
+        /// 数据库连接字符串
+        /// Sqlite demo: Data Source=managix.db3;
+        /// </summary>
+        public static string DBStr
+        {
+            get { return GetValue("DBConnectString"); }
+            set { SetValue("DBConnectString", value); }
+        }
+
+
+        /// <summary>
+        /// model 命名空间
+        /// </summary>
+        public static string NameSpace
+        {
+            get { return GetValue("NameSpace"); }
+            set { SetValue("NameSpace", value); }
+        }
+
+        /// <summary>
+        /// model路径
+        /// </summary>
+        public static string ModelFullPath
+        {
+            get { return GetValue("ModelFullPath"); }
+            set { SetValue("ModelFullPath", value); }
+        }
+
+        /// <summary>
+        /// 需要生成的表名 不填默认生成全部的表
+        /// </summary>
+        public static string GenerateTables
+        {
+            get { return GetValue("GenerateTables"); }
+            set { SetValue("GenerateTables", value); }
+        }
+
+        /// <summary>
+        /// 数据库类型
+        /// </summary>
+        public static string DBType
+        {
+            get { return GetValue("DBType"); }
+            set { SetValue("DBType", value); }
+        }
+
+
 
         /// <summary>
         /// 设置 config

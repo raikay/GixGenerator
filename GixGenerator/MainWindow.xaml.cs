@@ -1,6 +1,8 @@
 ﻿using CodeGener.Common;
+using CodeGener.Service;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -363,6 +365,18 @@ namespace GixGenerator
         private void Btn_TeConfig_Click(object sender, RoutedEventArgs e)
         {
             ConfigHelper.SetValue("IRepositoryPath", @"D:\Resource\www\Managix\Raikay.Managix.IRepository");
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CreateModelService.CreateModel();
+            MessageBox.Show("生成成功");
+        }
+
+        private void linkDmsite_Click(object sender, RoutedEventArgs e)
+        {
+            Hyperlink link = sender as Hyperlink;
+            Process.Start(new ProcessStartInfo(link.NavigateUri.AbsoluteUri));
         }
     }
 }
