@@ -12,26 +12,29 @@ namespace CodeGener.Common
 
         public static string IServicePath
         {
-            get { return GetValue("IServicePath"); }
-            set { SetValue("IServicePath", value); }
+            get { return $@"{GetValue("ProjectPath")}\{GetValue("ProjectPath")}IService.cs"; }
+            //set { SetValue("IServicePath", value); }
         }
 
         public static string ServicePath
         {
-            get { return GetValue("ServicePath"); }
-            set { SetValue("ServicePath", value); }
+            get { return $@"{GetValue("ProjectPath")}\{GetValue("ProjectPath")}Service.cs"; }
+            //get { return GetValue("ServicePath"); }
+            //set { SetValue("ServicePath", value); }
         }
 
         public static string IRepositoryPath
         {
-            get { return GetValue("IRepositoryPath"); }
-            set { SetValue("IRepositoryPath", value); }
+            get { return $@"{GetValue("ProjectPath")}\{GetValue("ProjectPath")}IRepository.cs"; }
+            //get { return GetValue("IRepositoryPath"); }
+            //set { SetValue("IRepositoryPath", value); }
         }
         
         public static string RepositoryPath
         {
-            get { return GetValue("RepositoryPath"); }
-            set { SetValue("RepositoryPath", value); }
+            get { return $@"{GetValue("ProjectPath")}\{GetValue("ProjectPath")}Repository.cs"; }
+            //get { return GetValue("RepositoryPath"); }
+            //set { SetValue("RepositoryPath", value); }
         }
         /// <summary>
         /// 数据库连接字符串
@@ -80,7 +83,22 @@ namespace CodeGener.Common
             set { SetValue("DBType", value); }
         }
 
-
+        /// <summary>
+        /// 项目地址
+        /// </summary>
+        public static string ProjectPath
+        {
+            get { return GetValue("ProjectPath"); }
+            set { SetValue("ProjectPath", value); }
+        }
+        /// <summary>
+        /// 项目地址
+        /// </summary>
+        public static string ProjectName
+        {
+            get { return GetValue("ProjectName"); }
+            set { SetValue("ProjectName", value); }
+        }
 
         /// <summary>
         /// 设置 config

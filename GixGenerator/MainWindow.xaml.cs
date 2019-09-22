@@ -89,17 +89,25 @@ namespace GixGenerator
 
         private void EditContent(string filePath, string writePath)
         {
+            try
+            {
+                System.IO.StreamReader reader = new System.IO.StreamReader(filePath);
+                string contents = reader.ReadToEnd();
+                reader.Close();
+                Console.Write(contents);
 
-            System.IO.StreamReader reader = new System.IO.StreamReader(filePath);
-            string contents = reader.ReadToEnd();
-            reader.Close();
-            Console.Write(contents);
+                contents = replaceTemp(contents);
 
-            contents = replaceTemp(contents);
+                System.IO.TextWriter textWriter = new System.IO.StreamWriter(writePath, true);
+                textWriter.Write(contents);
+                textWriter.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            System.IO.TextWriter textWriter = new System.IO.StreamWriter(writePath, true);
-            textWriter.Write(contents);
-            textWriter.Close();
+
         }
 
         private string replaceTemp(string contents)
