@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GixGenerator"
         mc:Ignorable="d"
 
-        Title="GixGenerator" Height="241.949" Width="376.563">
+        Title="GixGenerator" Height="256.949" Width="395.563">
     <Grid>
 
         <Button Content="根据类名生成" HorizontalAlignment="Left" Margin="213,118,0,0" VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click"/>
@@ -21,13 +21,12 @@
 
         <Button Content="根据接口生成" x:Name="BtnGetApiName" HorizontalAlignment="Left" Margin="125,118,0,0" VerticalAlignment="Top" Width="83" Height="20" Click="BtnGetApiName_Click" RenderTransformOrigin="0.75,0.532"/>
         <Button Content="设置" HorizontalAlignment="Left" Margin="297,118,0,0" VerticalAlignment="Top" Width="48" Height="20" x:Name="BtnSetting" Click="BtnSetting_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="320,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
+        <TextBlock HorizontalAlignment="Left" Margin="320,201,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
             <Hyperlink NavigateUri="https://github.com/raikay/GixGenerator" Click="linkDmsite_Click">关于</Hyperlink>
         </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="262,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
+        <TextBlock HorizontalAlignment="Left" Margin="262,201,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
             <Hyperlink Click="linkDmsite_Click" NavigateUri="https://github.com/raikay/GixGenerator"><Run Text="帮助文档"/></Hyperlink>
         </TextBlock>
-        <Button Content="测试" HorizontalAlignment="Left" Margin="37,143,0,0" VerticalAlignment="Top" Width="48" Height="20" x:Name="BtnTest" Click="BtnTest_Click"/>
 
 
 

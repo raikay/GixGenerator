@@ -34,7 +34,7 @@ namespace GixGenerator
         public string repositoryPath;
         public MainWindow()
         {
-
+            this.ResizeMode = System.Windows.ResizeMode.NoResize;
             InitializeComponent();
             iservicePath = ConfigHelper.IServicePath;
             servicePath = ConfigHelper.ServicePath;
@@ -351,7 +351,8 @@ namespace GixGenerator
         /// <param name="e"></param>
         private void BtnSetting_Click(object sender, RoutedEventArgs e)
         {
-            new Setting().Show();
+            var Win_Setting = new Setting();
+            Win_Setting.ShowDialog();
         }
 
         #region 根据路径获取文本内容

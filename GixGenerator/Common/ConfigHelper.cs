@@ -9,30 +9,30 @@ namespace CodeGener.Common
 {
     public class ConfigHelper
     {
-
+        private static string projectFilePath=$@"{GetValue("ProjectPath")}\{GetValue("ProjectName")}";
         public static string IServicePath
         {
-            get { return $@"{GetValue("ProjectPath")}\{GetValue("ProjectPath")}IService.cs"; }
+            get { return $@"{projectFilePath}IServices"; }
             //set { SetValue("IServicePath", value); }
         }
 
         public static string ServicePath
         {
-            get { return $@"{GetValue("ProjectPath")}\{GetValue("ProjectPath")}Service.cs"; }
+            get { return $@"{projectFilePath}Services"; }
             //get { return GetValue("ServicePath"); }
             //set { SetValue("ServicePath", value); }
         }
 
         public static string IRepositoryPath
         {
-            get { return $@"{GetValue("ProjectPath")}\{GetValue("ProjectPath")}IRepository.cs"; }
+            get { return $@"{projectFilePath}IRepository"; }
             //get { return GetValue("IRepositoryPath"); }
             //set { SetValue("IRepositoryPath", value); }
         }
         
         public static string RepositoryPath
         {
-            get { return $@"{GetValue("ProjectPath")}\{GetValue("ProjectPath")}Repository.cs"; }
+            get { return $@"{projectFilePath}Repository"; }
             //get { return GetValue("RepositoryPath"); }
             //set { SetValue("RepositoryPath", value); }
         }

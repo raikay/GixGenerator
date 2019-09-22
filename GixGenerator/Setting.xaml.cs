@@ -27,12 +27,12 @@ namespace GixGenerator
         //public string repositoryPatht;
         public Setting()
         {
-
+            this.ResizeMode = System.Windows.ResizeMode.NoResize;
             InitializeComponent();
-            Tbox_IServicePath.Text = ConfigHelper.IServicePath;
-            Tbox_ServicePath.Text = ConfigHelper.ServicePath;
-            Tbox_IRepositoryPath.Text = ConfigHelper.IRepositoryPath;
-            Tbox_RepositoryPath.Text = ConfigHelper.RepositoryPath;
+            //Tbox_IServicePath.Text = ConfigHelper.IServicePath;
+            //Tbox_ServicePath.Text = ConfigHelper.ServicePath;
+            //Tbox_IRepositoryPath.Text = ConfigHelper.IRepositoryPath;
+            //Tbox_RepositoryPath.Text = ConfigHelper.RepositoryPath;
             Tbox_DbConnectStr.Text = ConfigHelper.DBStr;
             Tbox_ModelNameSpace.Text = ConfigHelper.NameSpace;
             Tbox_ModelFullPath.Text = ConfigHelper.ModelFullPath;
@@ -73,34 +73,34 @@ namespace GixGenerator
 
         }
 
-        private void Btn_IRepo_Click(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Forms.FolderBrowserDialog openFileDialog = new System.Windows.Forms.FolderBrowserDialog();  //选择文件夹
+        //private void Btn_IRepo_Click(object sender, RoutedEventArgs e)
+        //{
+        //    System.Windows.Forms.FolderBrowserDialog openFileDialog = new System.Windows.Forms.FolderBrowserDialog();  //选择文件夹
 
-            openFileDialog.Description = "选择文件夹";
-            openFileDialog.SelectedPath = Tbox_IRepositoryPath.Text;
+        //    openFileDialog.Description = "选择文件夹";
+        //    openFileDialog.SelectedPath = Tbox_IRepositoryPath.Text;
 
-            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)//注意，此处一定要手动引入System.Window.Forms空间，否则你如果使用默认的DialogResult会发现没有OK属性
-            {
-                Tbox_IRepositoryPath.Text = openFileDialog.SelectedPath;
-                //MessageBox.Show(openFileDialog.SelectedPath);
-            }
-        }
+        //    if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)//注意，此处一定要手动引入System.Window.Forms空间，否则你如果使用默认的DialogResult会发现没有OK属性
+        //    {
+        //        Tbox_IRepositoryPath.Text = openFileDialog.SelectedPath;
+        //        //MessageBox.Show(openFileDialog.SelectedPath);
+        //    }
+        //}
 
         private void Btn_Repo_Click(object sender, RoutedEventArgs e)
         {
-            SelectFilePath(Tbox_RepositoryPath);
+            //SelectFilePath(Tbox_RepositoryPath);
         }
 
         private void Btn_ISer_Click(object sender, RoutedEventArgs e)
         {
 
-            SelectFilePath(Tbox_IServicePath);
+            ////SelectFilePath(Tbox_IServicePath);
         }
 
         private void Btn_Ser_Click(object sender, RoutedEventArgs e)
         {
-            SelectFilePath(Tbox_ServicePath);
+            //SelectFilePath(Tbox_ServicePath);
         }
 
         private void SelectFilePath(TextBox sender)
