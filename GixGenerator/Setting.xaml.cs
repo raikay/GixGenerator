@@ -1,4 +1,5 @@
 ﻿using CodeGener.Common;
+using CodeGener.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,17 +44,28 @@ namespace GixGenerator
             ConfigHelper.ServicePath = tbox_service.Text;
             ConfigHelper.IRepositoryPath = tbox_irepository.Text;
             ConfigHelper.RepositoryPath = tbox_repository.Text;
-
+            ConfigHelper.DBStr = tbox_dbstr.Text;
             ConfigHelper.NameSpace = tbox_modelnamespace.Text;
             ConfigHelper.ModelFullPath = tbox_modelfullpath.Text;
             ConfigHelper.DBType = cbox_dbtype.Text;
             MessageBox.Show("保存成功");
-            this.Close();
+            //this.Close();
         }
 
         private void BtnTestDb_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("开发中");
+            var conn = CreateModelService.GetInstance(tbox_dbstr.Text);
+            var ss = conn.Context;
+            try
+            {
+                conn.Open();
+                MessageBox.Show("连接成功");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"连接失败:{ex.Message}");
+            } 
+           
         }
     }
 }

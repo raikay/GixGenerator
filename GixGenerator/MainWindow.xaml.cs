@@ -154,17 +154,17 @@ namespace GixGenerator
                     List<(string fullName, Func<string, string, string, string> getFunStr)> fileFullName = new List<(string, Func<string, string, string, string>)>();
                     //匹配File所有函数
                     var serviceFileFullName = $"{servicePath}\\{NextFile.Name.Substring(1, (int)NextFile.Name.Length - 1)}";
-                    fileFullName.Add((serviceFileFullName, GetServiceFunStr));
+                    //fileFullName.Add((serviceFileFullName, GetServiceFunStr));
                     CreateFile(serviceFileFullName, iserverFunList, GetServiceFunStr);
 
                     var irepoFileName = $"I{NextFile.Name.Substring(1, (int)NextFile.Name.Length - 1).Replace("Service.cs", "Repository.cs")}";
                     var irepositoryFileFullName = $"{irepositoryPath}\\{irepoFileName}";
-                    fileFullName.Add((irepositoryFileFullName, GetServiceFunStr));
+                    //fileFullName.Add((irepositoryFileFullName, GetServiceFunStr));
                     CreateFile(irepositoryFileFullName, iserverFunList, GetIRepositoryFunStr);
 
                     var repoFileName = $"{NextFile.Name.Substring(1, (int)NextFile.Name.Length - 1).Replace("Service.cs", "Repository.cs")}";
                     var repositoryFileFullName = $"{repositoryPath}\\{repoFileName}";
-                    fileFullName.Add((repositoryFileFullName, GetServiceFunStr));
+                    //fileFullName.Add((repositoryFileFullName, GetServiceFunStr));
                     CreateFile(repositoryFileFullName, iserverFunList, GetRepositoryFunStr);
                 }
             }
