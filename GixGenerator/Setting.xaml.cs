@@ -72,37 +72,6 @@ namespace GixGenerator
             }
 
         }
-
-        //private void Btn_IRepo_Click(object sender, RoutedEventArgs e)
-        //{
-        //    System.Windows.Forms.FolderBrowserDialog openFileDialog = new System.Windows.Forms.FolderBrowserDialog();  //选择文件夹
-
-        //    openFileDialog.Description = "选择文件夹";
-        //    openFileDialog.SelectedPath = Tbox_IRepositoryPath.Text;
-
-        //    if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)//注意，此处一定要手动引入System.Window.Forms空间，否则你如果使用默认的DialogResult会发现没有OK属性
-        //    {
-        //        Tbox_IRepositoryPath.Text = openFileDialog.SelectedPath;
-        //        //MessageBox.Show(openFileDialog.SelectedPath);
-        //    }
-        //}
-
-        private void Btn_Repo_Click(object sender, RoutedEventArgs e)
-        {
-            //SelectFilePath(Tbox_RepositoryPath);
-        }
-
-        private void Btn_ISer_Click(object sender, RoutedEventArgs e)
-        {
-
-            ////SelectFilePath(Tbox_IServicePath);
-        }
-
-        private void Btn_Ser_Click(object sender, RoutedEventArgs e)
-        {
-            //SelectFilePath(Tbox_ServicePath);
-        }
-
         private void SelectFilePath(TextBox sender)
         {
             System.Windows.Forms.FolderBrowserDialog openFileDialog = new System.Windows.Forms.FolderBrowserDialog();  //选择文件夹
@@ -114,6 +83,17 @@ namespace GixGenerator
             {
                 sender.Text = openFileDialog.SelectedPath;
             }
+        }
+
+        private void Btn_ProSelecter_Click(object sender, RoutedEventArgs e)
+        {
+            SelectFilePath(Tbox_ProjectPath);
+
+        }
+
+        private void Btn_ModelSelecter_Click(object sender, RoutedEventArgs e)
+        {
+            SelectFilePath(Tbox_ModelFullPath);
         }
     }
 }

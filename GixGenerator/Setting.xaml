@@ -19,14 +19,14 @@
         <TextBox  VerticalContentAlignment="Center"  x:Name="Tbox_ModelNameSpace"  HorizontalAlignment="Left" Height="21" Margin="116,65,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="300"/>
         <TextBox  VerticalContentAlignment="Center"  x:Name="Tbox_ModelFullPath"  HorizontalAlignment="Left" Height="21" Margin="116,37,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="300"/>
         <Label Content="Model命名空间" HorizontalAlignment="Left" Margin="16,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
-        <Label Content="Models Path"  HorizontalAlignment="Left" Margin="29,37,0,0" VerticalAlignment="Top"/>
+        <Label Content="Models地址"  HorizontalAlignment="Left" Margin="34,37,0,0" VerticalAlignment="Top"/>
         <Button Content="测试数据库连接" x:Name="BtnTestDb" HorizontalAlignment="Left" Margin="233,159,0,0" VerticalAlignment="Top" Width="95" Height="20" Click="BtnTestDb_Click"  />
         <TextBox  VerticalContentAlignment="Center"  x:Name="Tbox_ProjectPath"  HorizontalAlignment="Left" Height="21" Margin="115,11,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="300"/>
         <Label Content="项目地址" HorizontalAlignment="Left" Margin="53,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
         <TextBox  VerticalContentAlignment="Center"  x:Name="Tbox_ProjectName"  HorizontalAlignment="Left" Height="21" Margin="115,95,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="300"/>
         <Label Content="项目名称" HorizontalAlignment="Left" Margin="53,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
         <!--<Button VerticalContentAlignment="Center" Content=" 〉" x:Name="Btn_Ser" HorizontalAlignment="Left" Margin="421,37,0,0" VerticalAlignment="Top" Width="18" Height="22" Click="Btn_Ser_Click"  />-->
-        <Button VerticalContentAlignment="Center" Content=" 〉" x:Name="Btn_Ser_Copy2" HorizontalAlignment="Left" Margin="421,10,0,0" VerticalAlignment="Top" Width="18" Height="20" Click="Btn_Ser_Click"  />
-        <Button VerticalContentAlignment="Center" Content=" 〉" x:Name="Btn_Ser_Copy3" HorizontalAlignment="Left" Margin="421,38,0,0" VerticalAlignment="Top" Width="18" Height="20" Click="Btn_Ser_Click"  />
+        <Button VerticalContentAlignment="Center" Content=" 〉" x:Name="Btn_ProSelecter" HorizontalAlignment="Left" Margin="421,10,0,0" VerticalAlignment="Top" Width="18" Height="20" Click="Btn_ProSelecter_Click"  />
+        <Button VerticalContentAlignment="Center" Content=" 〉" x:Name="Btn_ModelSelecter" HorizontalAlignment="Left" Margin="421,38,0,0" VerticalAlignment="Top" Width="18" Height="20" Click="Btn_ModelSelecter_Click"   />
     </Grid>
 </Window>
