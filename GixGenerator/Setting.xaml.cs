@@ -50,5 +50,10 @@ namespace GixGenerator
             MessageBox.Show("保存成功");
             this.Close();
         }
+
+        private void BtnTestDb_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("开发中");
+        }
     }
 }
