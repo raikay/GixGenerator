@@ -1,8 +1,10 @@
 # GixGenerator
 Raikay.Managix 项目 代码生成器 dotnet core  
 本软件辅助Managix项目框架生成对应代码  
-![](https://raw.githubusercontent.com/raikay/GixGenerator/master/Doc/IMG/20190922175255.jpg)
-Managix框架未整理完，过段时间整理后发布出来。  
+
+![](https://raw.githubusercontent.com/raikay/GixGenerator/master/Doc/IMG/20190922175255.jpg)  
+
+Managix框架未整理完，过段时间整理后发布出来。   
 ### 生成Model
 连接数据库，根据数据库表名字段生成对应实体类  
   
