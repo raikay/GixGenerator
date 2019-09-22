@@ -17,6 +17,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace GixGenerator
 {
@@ -377,6 +379,18 @@ namespace GixGenerator
         {
             Hyperlink link = sender as Hyperlink;
             Process.Start(new ProcessStartInfo(link.NavigateUri.AbsoluteUri));
+        }
+
+        private void BtnTest_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog openFileDialog = new System.Windows.Forms.FolderBrowserDialog();  //选择文件夹
+
+            openFileDialog.Description = "这是desc";
+            openFileDialog.SelectedPath = @"D:\Resource\www\Managix\Raikay.Managix.IRepository111";
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)//注意，此处一定要手动引入System.Window.Forms空间，否则你如果使用默认的DialogResult会发现没有OK属性
+            {
+                MessageBox.Show(openFileDialog.SelectedPath);
+            }
         }
     }
 }

@@ -27,6 +27,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="262,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
             <Hyperlink Click="linkDmsite_Click" NavigateUri="https://github.com/raikay/GixGenerator"><Run Text="帮助文档"/></Hyperlink>
         </TextBlock>
+        <Button Content="测试" HorizontalAlignment="Left" Margin="37,143,0,0" VerticalAlignment="Top" Width="48" Height="20" x:Name="BtnTest" Click="BtnTest_Click"/>
 
 
 

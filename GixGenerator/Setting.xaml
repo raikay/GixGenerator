@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Setting" Height="378.264" Width="498.566">
     <Grid>
-        <TextBox VerticalContentAlignment="Center"  x:Name="tbox_irepository" HorizontalAlignment="Left" Height="23" Margin="119,14,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <TextBox VerticalContentAlignment="Center"  x:Name="tbox_irepository" HorizontalAlignment="Left" Height="23" Margin="119,14,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="320"/>
         <TextBox VerticalContentAlignment="Center" x:Name="tbox_repository" HorizontalAlignment="Left" Height="21" Margin="119,52,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
         <TextBox VerticalContentAlignment="Center" x:Name="tbox_iservice" HorizontalAlignment="Left" Height="21" Margin="119,88,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
         <TextBox VerticalContentAlignment="Center"  x:Name="tbox_service" HorizontalAlignment="Left" Height="21" Margin="119,123,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="354"/>
@@ -29,5 +29,6 @@
         <Label Content="ModelNameSpace" HorizontalAlignment="Left" Margin="3,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32"/>
         <Label Content="Models Path"  HorizontalAlignment="Left" Margin="33,156,0,0" VerticalAlignment="Top"/>
         <Button Content="测试数据库连接" x:Name="BtnTestDb" HorizontalAlignment="Left" Margin="290,299,0,0" VerticalAlignment="Top" Width="95" Height="20" Click="BtnTestDb_Click"  />
+        <Button Content=" 〉" x:Name="Btn_Repo" HorizontalAlignment="Left" Margin="447,14,0,0" VerticalAlignment="Top" Width="20" Height="23" Click="Btn_Repo_Click"/>
     </Grid>
 </Window>
