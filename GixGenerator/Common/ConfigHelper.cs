@@ -40,7 +40,7 @@ namespace CodeGener.Common
         /// 数据库连接字符串
         /// Sqlite demo: Data Source=managix.db3;
         /// </summary>
-        public static string DBStr
+        public static string DBConnectStr
         {
             get { return GetValue("DBConnectString"); }
             set { SetValue("DBConnectString", value); }

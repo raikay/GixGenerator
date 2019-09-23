@@ -6,27 +6,29 @@
         xmlns:local="clr-namespace:GixGenerator"
         mc:Ignorable="d"
 
-        Title="GixGenerator" Height="256.949" Width="395.563">
+        Title="GixGenerator" Height="196.916" Width="340.078">
     <Grid>
 
-        <Button Content="根据类名生成" HorizontalAlignment="Left" Margin="213,118,0,0" VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click"/>
-        <Label Content="类名" HorizontalAlignment="Left" Margin="31,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.865,4.361"/>
-        <TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="18" Margin="70,39,0,0" TextWrapping="Wrap" Text="TableName" VerticalAlignment="Top" Width="265"/>
+        <Button Content="生成文件" HorizontalAlignment="Left" Margin="123,69,0,0" VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click"/>
+        <Label Content="类名" HorizontalAlignment="Left" Margin="35,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.865,4.361"/>
+        <TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="18" Margin="74,46,0,0" TextWrapping="Wrap" Text="TableName" VerticalAlignment="Top" Width="193"/>
 
-        <CheckBox Content="IRepository" HorizontalAlignment="Left" IsChecked="True" Margin="172,74,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Repository" HorizontalAlignment="Left" IsChecked="True" Margin="262,74,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="IService" HorizontalAlignment="Left" IsChecked="True" Margin="37,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.479,1.089"/>
-        <CheckBox Content="Service" HorizontalAlignment="Left" IsChecked="True" Margin="106,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.6,1.667"/>
-        <Button Content="生成Model" HorizontalAlignment="Left" Margin="37,118,0,0" VerticalAlignment="Top" Width="83" Height="20" Click="Button_Click_1"/>
+        <CheckBox Content="IRepository" HorizontalAlignment="Left" IsChecked="True" Margin="147,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.765,1.999"/>
+        <CheckBox Content="Repository" HorizontalAlignment="Left" IsChecked="True" Margin="237,20,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="IService" HorizontalAlignment="Left" IsChecked="True" Margin="12,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.479,1.089"/>
+        <CheckBox Content="Service" HorizontalAlignment="Left" IsChecked="True" Margin="81,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.6,1.667"/>
+        <Button Content="生成Model" HorizontalAlignment="Left" Margin="35,69,0,0" VerticalAlignment="Top" Width="83" Height="20" Click="Button_Click_1"/>
 
-        <Button Content="根据接口生成" x:Name="BtnGetApiName" HorizontalAlignment="Left" Margin="125,118,0,0" VerticalAlignment="Top" Width="83" Height="20" Click="BtnGetApiName_Click" RenderTransformOrigin="0.75,0.532"/>
-        <Button Content="设置" HorizontalAlignment="Left" Margin="297,118,0,0" VerticalAlignment="Top" Width="48" Height="20" x:Name="BtnSetting" Click="BtnSetting_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="320,190,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
+        <Button Content="生成函数" x:Name="BtnGetApiName" HorizontalAlignment="Left" Margin="206,69,0,0" VerticalAlignment="Top" Width="83" Height="20" Click="BtnGetApiName_Click" RenderTransformOrigin="0.75,0.532"/>
+        <Button Content="设  置" HorizontalAlignment="Left" Margin="207,94,0,0" VerticalAlignment="Top" Width="83" Height="20" x:Name="BtnSetting" Click="BtnSetting_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="264,128,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
             <Hyperlink NavigateUri="https://github.com/raikay/GixGenerator" Click="linkDmsite_Click">关于</Hyperlink>
         </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="262,190,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
+        <TextBlock HorizontalAlignment="Left" Margin="206,128,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
             <Hyperlink Click="linkDmsite_Click" NavigateUri="https://github.com/raikay/GixGenerator"><Run Text="帮助文档"/></Hyperlink>
         </TextBlock>
+        <Button Content="生成项目" HorizontalAlignment="Left" Margin="35,94,0,0" VerticalAlignment="Top" Width="83" Height="20" Click="Button_Click_1"/>
+        <Button Content="测试按钮" HorizontalAlignment="Left" Margin="123,94,0,0" VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click"/>
 
 
 

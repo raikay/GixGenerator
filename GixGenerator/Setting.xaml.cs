@@ -25,7 +25,7 @@ namespace GixGenerator
         {
             this.ResizeMode = System.Windows.ResizeMode.NoResize;
             InitializeComponent();
-            Tbox_DbConnectStr.Text = ConfigHelper.DBStr;
+            Tbox_DbConnectStr.Text = ConfigHelper.DBConnectStr;
             Tbox_ModelNameSpace.Text = ConfigHelper.NameSpace;
             Tbox_ModelFullPath.Text = ConfigHelper.ModelFullPath;
             Cbox_DbType.Text = ConfigHelper.DBType;
@@ -35,7 +35,7 @@ namespace GixGenerator
 
         private void BtnSaveSetting_Click(object sender, RoutedEventArgs e)
         {
-            ConfigHelper.DBStr = Tbox_DbConnectStr.Text;
+            ConfigHelper.DBConnectStr = Tbox_DbConnectStr.Text;
             ConfigHelper.NameSpace = Tbox_ModelNameSpace.Text;
             ConfigHelper.ModelFullPath = Tbox_ModelFullPath.Text;
             ConfigHelper.DBType = Cbox_DbType.Text;
@@ -48,7 +48,6 @@ namespace GixGenerator
         private void BtnTestDb_Click(object sender, RoutedEventArgs e)
         {
             var conn = CreateModelService.GetInstance(Tbox_DbConnectStr.Text);
-            var ss = conn.Context;
             try
             {
                 conn.Open();
@@ -76,7 +75,6 @@ namespace GixGenerator
         private void Btn_ProSelecter_Click(object sender, RoutedEventArgs e)
         {
             SelectFilePath(Tbox_ProjectPath);
-
         }
 
         private void Btn_ModelSelecter_Click(object sender, RoutedEventArgs e)

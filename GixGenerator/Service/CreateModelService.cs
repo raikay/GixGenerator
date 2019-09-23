@@ -15,7 +15,7 @@ namespace CodeGener.Service
         public static void CreateModel()
         {
 
-            var conn = ConfigHelper.DBStr;//config.GetSection("Connections:DefaultConnect").Value;
+            var conn = ConfigHelper.DBConnectStr;//config.GetSection("Connections:DefaultConnect").Value;
             string path = string.Empty;
             var relativePath = "";//config.GetSection("Settings:RelativePath").Value;
             //自动找最外层并 找到更外层 方便附加到其他项目中
