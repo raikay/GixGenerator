@@ -54,51 +54,38 @@ namespace GixGenerator
         {
             string className = tbox_class_name.Text;
 
-            if (!Directory.Exists(irepositoryPath))
-            {
-                Directory.CreateDirectory(irepositoryPath);
-            }
-            EditContent("File/IRepository.txt", $"{irepositoryPath}/I{className}Repository.cs");
+            EditContent("File/IRepository.txt", $"{irepositoryPath}/I{className}Repository.cs", irepositoryPath);
 
+            EditContent("File/Repository.txt", $"{repositoryPath}/{className}Repository.cs", repositoryPath);
 
+            EditContent("File/IService.txt", $"{iservicePath}/I{className}Service.cs", iservicePath);
 
-            if (!Directory.Exists(repositoryPath))
-            {
-                Directory.CreateDirectory(repositoryPath);
-            }
-            EditContent("File/Repository.txt", $"{repositoryPath}/{className}Repository.cs");
+            EditContent("File/Service.txt", $"{servicePath}/{className}Service.cs", servicePath);
 
-
-            if (!Directory.Exists(iservicePath))
-            {
-                Directory.CreateDirectory(iservicePath);
-            }
-            EditContent("File/IService.txt", $"{iservicePath}/I{className}Service.cs");
-
-            if (!Directory.Exists(servicePath))
-            {
-                Directory.CreateDirectory(servicePath);
-            }
-            EditContent("File/Service.txt", $"{servicePath}/{className}Service.cs");
-
-
-            //var te = addr1.Text;
             MessageBox.Show($"生成成功");
         }
 
 
-        private void EditContent(string filePath, string writePath)
+        private void EditContent(string fileName, string writeNamePath, string filePath)
         {
             try
             {
-                System.IO.StreamReader reader = new System.IO.StreamReader(filePath);
+                if (!Directory.Exists(filePath))
+                    Directory.CreateDirectory(filePath);
+                System.IO.StreamReader reader = new System.IO.StreamReader(fileName);
                 string contents = reader.ReadToEnd();
                 reader.Close();
-                Console.Write(contents);
-
-                contents = replaceTemp(contents);
-
-                System.IO.TextWriter textWriter = new System.IO.StreamWriter(writePath, true);
+                string projectName = "Raikay.Managix";
+                string className = tbox_class_name.Text;
+                string dbcontext = "SqliteContext";
+                string projectNameTemp = "#{ProjectName}";
+                string classNameTemp = "#{Name}";
+                string dbcontextTemp = "#{DBContext}";
+                contents = contents.Replace(dbcontextTemp, dbcontext);
+                contents = contents.Replace(projectNameTemp, projectName);
+                contents = contents.Replace(classNameTemp, className);
+                //contents = replaceTemp(contents);
+                System.IO.TextWriter textWriter = new System.IO.StreamWriter(writeNamePath, true);
                 textWriter.Write(contents);
                 textWriter.Close();
             }
@@ -110,23 +97,6 @@ namespace GixGenerator
 
         }
 
-        private string replaceTemp(string contents)
-        {
-            string dbcontext = "SqliteContext";
-            string projectName = "Raikay.Managix";
-            string className = tbox_class_name.Text;
-
-            string projectNameTemp = "#{ProjectName}";
-            string classNameTemp = "#{Name}";
-            string dbcontextTemp = "#{DBContext}";
-
-            contents = contents.Replace(dbcontextTemp, dbcontext);
-            contents = contents.Replace(projectNameTemp, projectName);
-            contents = contents.Replace(classNameTemp, className);
-
-            return contents;
-
-        }
         #endregion
 
 
@@ -161,25 +131,19 @@ namespace GixGenerator
                     }
 
                     #endregion
-                    List<(string fullName, Func<string, string, string, string> getFunStr)> fileFullName = new List<(string, Func<string, string, string, string>)>();
                     //匹配File所有函数
                     var serviceFileFullName = $"{servicePath}\\{NextFile.Name.Substring(1, (int)NextFile.Name.Length - 1)}";
-                    //fileFullName.Add((serviceFileFullName, GetServiceFunStr));
                     CreateFile(serviceFileFullName, iserverFunList, GetServiceFunStr);
 
                     var irepoFileName = $"I{NextFile.Name.Substring(1, (int)NextFile.Name.Length - 1).Replace("Service.cs", "Repository.cs")}";
                     var irepositoryFileFullName = $"{irepositoryPath}\\{irepoFileName}";
-                    //fileFullName.Add((irepositoryFileFullName, GetServiceFunStr));
                     CreateFile(irepositoryFileFullName, iserverFunList, GetIRepositoryFunStr);
 
                     var repoFileName = $"{NextFile.Name.Substring(1, (int)NextFile.Name.Length - 1).Replace("Service.cs", "Repository.cs")}";
                     var repositoryFileFullName = $"{repositoryPath}\\{repoFileName}";
-                    //fileFullName.Add((repositoryFileFullName, GetServiceFunStr));
                     CreateFile(repositoryFileFullName, iserverFunList, GetRepositoryFunStr);
                 }
             }
-            //生成Repo
-            //生成IRepo
         }
 
 
@@ -244,16 +208,11 @@ namespace GixGenerator
             sb.Append(firstSpace);
             sb.Append("{\r\n");
             //函数体
-
             if (resultName != "Task" && resultName != "void")
             {
-                //sb.Append(codeFirstSpace);
-                //sb.Append($"{resultName} result = new {resultName}();\r\n");
                 sb.Append(codeFirstSpace);
                 sb.Append($"return new {resultName}();\r\n");
             }
-
-            //
             sb.Append($"{firstSpace}");
             sb.Append("}");
             sb.Append("\r\n");
@@ -311,39 +270,6 @@ namespace GixGenerator
         #endregion
 
         #endregion
-
-
-
-        /// <summary>
-        /// 遍历文件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnDoFile_Click(object sender, RoutedEventArgs e)
-        {
-            //C#遍历指定文件夹中的所有文件 
-            DirectoryInfo TheFolder = new DirectoryInfo(repositoryPath);
-            if (!TheFolder.Exists)
-                return;
-
-            //遍历文件
-            foreach (FileInfo NextFile in TheFolder.GetFiles())
-            {
-                if (NextFile.Name.EndsWith("Repository.cs"))
-                {
-                    var content = GetContent(repositoryPath + "/" + NextFile.Name);
-                    //匹配一个类中所有函数
-                    MatchCollection matches = Regex.Matches(content, "public\\s{1,50}(?!class).{1,300}\\s{1,50}(\\w{1,50})\\(");
-                    var temp = (matches[0] as Match).Groups["all"].ToString();
-                    foreach (Match item in matches)
-                    {
-                        var ss = item.Groups["all"].ToString();
-                        MessageBox.Show(item.ToString());
-                    }
-                }
-            }
-        }
-
         /// <summary>
         /// 显示设置窗体
         /// </summary>
@@ -373,10 +299,6 @@ namespace GixGenerator
 
         #endregion
 
-        private void Btn_TeConfig_Click(object sender, RoutedEventArgs e)
-        {
-            ConfigHelper.SetValue("IRepositoryPath", @"D:\Resource\www\Managix\Raikay.Managix.IRepository");
-        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -388,18 +310,6 @@ namespace GixGenerator
         {
             Hyperlink link = sender as Hyperlink;
             Process.Start(new ProcessStartInfo(link.NavigateUri.AbsoluteUri));
-        }
-
-        private void BtnTest_Click(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Forms.FolderBrowserDialog openFileDialog = new System.Windows.Forms.FolderBrowserDialog();  //选择文件夹
-
-            openFileDialog.Description = "这是desc";
-            openFileDialog.SelectedPath = @"D:\Resource\www\Managix\Raikay.Managix.IRepository111";
-            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)//注意，此处一定要手动引入System.Window.Forms空间，否则你如果使用默认的DialogResult会发现没有OK属性
-            {
-                MessageBox.Show(openFileDialog.SelectedPath);
-            }
         }
     }
 }

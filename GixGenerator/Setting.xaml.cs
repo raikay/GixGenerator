@@ -21,18 +21,10 @@ namespace GixGenerator
     /// </summary>
     public partial class Setting : Window
     {
-        //public string iservicePatht;
-        //public string servicePatht;
-        //public string irepositoryPatht;
-        //public string repositoryPatht;
         public Setting()
         {
             this.ResizeMode = System.Windows.ResizeMode.NoResize;
             InitializeComponent();
-            //Tbox_IServicePath.Text = ConfigHelper.IServicePath;
-            //Tbox_ServicePath.Text = ConfigHelper.ServicePath;
-            //Tbox_IRepositoryPath.Text = ConfigHelper.IRepositoryPath;
-            //Tbox_RepositoryPath.Text = ConfigHelper.RepositoryPath;
             Tbox_DbConnectStr.Text = ConfigHelper.DBStr;
             Tbox_ModelNameSpace.Text = ConfigHelper.NameSpace;
             Tbox_ModelFullPath.Text = ConfigHelper.ModelFullPath;
@@ -43,10 +35,6 @@ namespace GixGenerator
 
         private void BtnSaveSetting_Click(object sender, RoutedEventArgs e)
         {
-            //ConfigHelper.IServicePath = Tbox_IServicePath.Text;
-            //ConfigHelper.ServicePath = Tbox_ServicePath.Text;
-            //ConfigHelper.IRepositoryPath = Tbox_IRepositoryPath.Text;
-            //ConfigHelper.RepositoryPath = Tbox_RepositoryPath.Text;
             ConfigHelper.DBStr = Tbox_DbConnectStr.Text;
             ConfigHelper.NameSpace = Tbox_ModelNameSpace.Text;
             ConfigHelper.ModelFullPath = Tbox_ModelFullPath.Text;
