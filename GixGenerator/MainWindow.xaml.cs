@@ -34,7 +34,11 @@ namespace GixGenerator
         public string repositoryPath;
         public MainWindow()
         {
+            //禁止缩放
             this.ResizeMode = System.Windows.ResizeMode.NoResize;
+            //桌面居中
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.Topmost = true;
             InitializeComponent();
             iservicePath = ConfigHelper.IServicePath;
             servicePath = ConfigHelper.ServicePath;

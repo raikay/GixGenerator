@@ -23,7 +23,12 @@ namespace GixGenerator
     {
         public Setting()
         {
+            //禁止缩放
             this.ResizeMode = System.Windows.ResizeMode.NoResize;
+            //桌面居中
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.Topmost = true;
+
             InitializeComponent();
             Tbox_DbConnectStr.Text = ConfigHelper.DBConnectStr;
             Tbox_ModelNameSpace.Text = ConfigHelper.NameSpace;

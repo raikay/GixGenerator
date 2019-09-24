@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:GixGenerator"
         mc:Ignorable="d"
 
-        Title="GixGenerator" Height="196.916" Width="340.078">
+        Title="GixGenerator" Height="196.916" Width="344.626">
     <Grid>
 
         <Button Content="生成文件" HorizontalAlignment="Left" Margin="123,69,0,0" VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click"/>
-        <Label Content="类名" HorizontalAlignment="Left" Margin="35,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.865,4.361"/>
-        <TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="18" Margin="74,46,0,0" TextWrapping="Wrap" Text="TableName" VerticalAlignment="Top" Width="193"/>
+        <Label Content="类名" HorizontalAlignment="Left" Margin="31,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.865,4.361"/>
+        <TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="18" Margin="70,46,0,0" TextWrapping="Wrap" Text="TableName" VerticalAlignment="Top" Width="218"/>
 
         <CheckBox Content="IRepository" HorizontalAlignment="Left" IsChecked="True" Margin="147,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.765,1.999"/>
         <CheckBox Content="Repository" HorizontalAlignment="Left" IsChecked="True" Margin="237,20,0,0" VerticalAlignment="Top"/>
