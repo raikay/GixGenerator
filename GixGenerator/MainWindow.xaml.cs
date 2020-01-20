@@ -58,40 +58,49 @@ namespace GixGenerator
         {
             string className = tbox_class_name.Text;
 
-            EditContent("File/IRepository.txt", $"{irepositoryPath}/I{className}Repository.cs", irepositoryPath);
+            EditContent("File/IRepository.txt", $"{irepositoryPath}/I{className}Repository.cs", irepositoryPath, className);
 
-            EditContent("File/Repository.txt", $"{repositoryPath}/{className}Repository.cs", repositoryPath);
+            EditContent("File/Repository.txt", $"{repositoryPath}/{className}Repository.cs", repositoryPath, className);
 
-            EditContent("File/IService.txt", $"{iservicePath}/I{className}Service.cs", iservicePath);
+            EditContent("File/IService.txt", $"{iservicePath}/I{className}Service.cs", iservicePath, className);
 
-            EditContent("File/Service.txt", $"{servicePath}/{className}Service.cs", servicePath);
+            EditContent("File/Service.txt", $"{servicePath}/{className}Service.cs", servicePath, className);
 
             MessageBox.Show($"生成成功");
         }
 
 
-        private void EditContent(string fileName, string writeNamePath, string filePath)
+        private void EditContent(string fileName, string writeNamePath, string filePath,string className)
         {
             try
             {
                 if (!Directory.Exists(filePath))
                     Directory.CreateDirectory(filePath);
-                System.IO.StreamReader reader = new System.IO.StreamReader(fileName);
-                string contents = reader.ReadToEnd();
-                reader.Close();
+                string contents = string.Empty;
+                using (StreamReader reader = new StreamReader(fileName))
+                {
+                    contents = reader.ReadToEnd();
+                }
+                if (string.IsNullOrEmpty(contents))
+                {
+                    throw new Exception("读取模板内容失败");
+                }
                 string projectName = "Raikay.Managix";
-                string className = tbox_class_name.Text;
                 string dbcontext = "SqliteContext";
                 string projectNameTemp = "#{ProjectName}";
                 string classNameTemp = "#{Name}";
                 string dbcontextTemp = "#{DBContext}";
-                contents = contents.Replace(dbcontextTemp, dbcontext);
-                contents = contents.Replace(projectNameTemp, projectName);
-                contents = contents.Replace(classNameTemp, className);
+                contents = contents
+                    .Replace(dbcontextTemp, dbcontext)
+                    .Replace(projectNameTemp, projectName)
+                    .Replace(classNameTemp, className);
                 //contents = replaceTemp(contents);
-                System.IO.TextWriter textWriter = new System.IO.StreamWriter(writeNamePath, true);
-                textWriter.Write(contents);
-                textWriter.Close();
+                using (TextWriter textWriter = new StreamWriter(writeNamePath, true))
+                {
+                    textWriter.Write(contents);
+                    textWriter.Close();
+                }
+
             }
             catch (Exception ex)
             {
@@ -274,6 +283,7 @@ namespace GixGenerator
         #endregion
 
         #endregion
+
         /// <summary>
         /// 显示设置窗体
         /// </summary>
@@ -303,9 +313,16 @@ namespace GixGenerator
 
         #endregion
 
-
+        /// <summary>
+        /// 生成项目
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            var basePath = new DirectoryInfo(Directory.GetCurrentDirectory());
+            MessageBox.Show(Directory.GetCurrentDirectory());
+
             CreateModelService.CreateModel();
             MessageBox.Show("生成成功");
         }
@@ -314,6 +331,28 @@ namespace GixGenerator
         {
             Hyperlink link = sender as Hyperlink;
             Process.Start(new ProcessStartInfo(link.NavigateUri.AbsoluteUri));
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("设置");
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            Hyperlink link = sender as Hyperlink;
+            //link.NavigateUri = new Uri("https://github.com/raikay/GixGenerator");
+            Process.Start(new ProcessStartInfo("https://github.com/raikay/GixGenerator"));
         }
     }
 }

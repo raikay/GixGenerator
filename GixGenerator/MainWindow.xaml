@@ -6,29 +6,71 @@
         xmlns:local="clr-namespace:GixGenerator"
         mc:Ignorable="d"
 
-        Title="GixGenerator" Height="196.916" Width="344.626">
+        Title="GixGenerator" Height="250.25" Width="356.626">
     <Grid>
 
-        <Button Content="生成文件" HorizontalAlignment="Left" Margin="123,69,0,0" VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click"/>
-        <Label Content="类名" HorizontalAlignment="Left" Margin="31,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.865,4.361"/>
-        <TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="18" Margin="70,46,0,0" TextWrapping="Wrap" Text="TableName" VerticalAlignment="Top" Width="218"/>
+        <Menu Height="20" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="343" >
+            <MenuItem Header="设置" Click="BtnSetting_Click" >
+            </MenuItem>
+            <MenuItem Header="帮助">
+                <MenuItem Header="帮助文档" Click="MenuItem_Click_2">
 
-        <CheckBox Content="IRepository" HorizontalAlignment="Left" IsChecked="True" Margin="147,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.765,1.999"/>
-        <CheckBox Content="Repository" HorizontalAlignment="Left" IsChecked="True" Margin="237,20,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="IService" HorizontalAlignment="Left" IsChecked="True" Margin="12,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.479,1.089"/>
-        <CheckBox Content="Service" HorizontalAlignment="Left" IsChecked="True" Margin="81,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.6,1.667"/>
-        <Button Content="生成Model" HorizontalAlignment="Left" Margin="35,69,0,0" VerticalAlignment="Top" Width="83" Height="20" Click="Button_Click_1"/>
+                </MenuItem>
+                <Hyperlink NavigateUri="https://github.com/raikay/GixGenerator" Click="linkDmsite_Click">关于</Hyperlink>
+            </MenuItem>
+        </Menu>
 
-        <Button Content="生成函数" x:Name="BtnGetApiName" HorizontalAlignment="Left" Margin="206,69,0,0" VerticalAlignment="Top" Width="83" Height="20" Click="BtnGetApiName_Click" RenderTransformOrigin="0.75,0.532"/>
-        <Button Content="设  置" HorizontalAlignment="Left" Margin="207,94,0,0" VerticalAlignment="Top" Width="83" Height="20" x:Name="BtnSetting" Click="BtnSetting_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="264,128,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
-            <Hyperlink NavigateUri="https://github.com/raikay/GixGenerator" Click="linkDmsite_Click">关于</Hyperlink>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="206,128,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
-            <Hyperlink Click="linkDmsite_Click" NavigateUri="https://github.com/raikay/GixGenerator"><Run Text="帮助文档"/></Hyperlink>
-        </TextBlock>
-        <Button Content="生成项目" HorizontalAlignment="Left" Margin="35,94,0,0" VerticalAlignment="Top" Width="83" Height="20" Click="Button_Click_1"/>
-        <Button Content="测试按钮" HorizontalAlignment="Left" Margin="123,94,0,0" VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click"/>
+
+        <!--<CheckBox Content="IRepository" HorizontalAlignment="Left" IsChecked="True" Margin="145,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.765,1.999"/>
+        <CheckBox Content="Repository" HorizontalAlignment="Left" IsChecked="True" Margin="235,190,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="IService" HorizontalAlignment="Left" IsChecked="True" Margin="10,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.479,1.089"/>
+        <CheckBox Content="Service" HorizontalAlignment="Left" IsChecked="True" Margin="79,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.6,1.667"/>-->
+        <!--<GroupBox Header="已有项目" HorizontalAlignment="Left" Height="97" Margin="10,88,0,0" VerticalAlignment="Top" Width="217"/>-->
+        <TabControl HorizontalAlignment="Left" Height="194" Margin="0,22,0,0" VerticalAlignment="Top" Width="343">
+            <TabItem Header="已有项目">
+
+                <Grid Background="White">
+                    <TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="198" Margin="0,111,0,0">
+                        <TextBox.Resources>
+                            <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
+                                <VisualBrush.Visual>
+                                    <TextBlock FontStyle="Italic" Text="请输入类名称"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </TextBox.Resources>
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Background" Value="{StaticResource HintText}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <Button Content="生 成 类" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="83" Height="20" Click="Button_Click" Margin="0,137,0,0"/>
+                    <!--<Label Content="表名" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="0.865,4.361" Margin="9,16,0,0"/>-->
+                    <!--<TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="198" Margin="0,23,0,0">
+                        
+                    </TextBox>-->
+
+                    <Button Content="生成函数" x:Name="BtnGetApiName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Height="20" Click="BtnGetApiName_Click" RenderTransformOrigin="0.75,0.532" Margin="102,137,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="新建项目">
+                <Grid Background="White">
+
+                    <Button Content="生成Model" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click_1" Margin="181,136,0,0"/>
+
+
+                    <Button Content="一键生成项目" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="81" Height="21" Click="Button_Click_1" Margin="64,136,0,0"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
 
 
 
