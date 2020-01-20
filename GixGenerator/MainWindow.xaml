@@ -30,7 +30,7 @@
             <TabItem Header="已有项目">
 
                 <Grid Background="White">
-                    <TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="198" Margin="0,111,0,0">
+                    <TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="198" Margin="58,99,0,0">
                         <TextBox.Resources>
                             <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                                 <VisualBrush.Visual>
@@ -51,22 +51,30 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <Button Content="生 成 类" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="83" Height="20" Click="Button_Click" Margin="0,137,0,0"/>
+                    <Button Content="生 成 类" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="83" Height="20" Click="Button_Click" Margin="58,137,0,0"/>
                     <!--<Label Content="表名" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="0.865,4.361" Margin="9,16,0,0"/>-->
                     <!--<TextBox VerticalContentAlignment="Center"  x:Name="tbox_class_name" HorizontalAlignment="Left" Height="21"  TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="198" Margin="0,23,0,0">
                         
                     </TextBox>-->
 
-                    <Button Content="生成函数" x:Name="BtnGetApiName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Height="20" Click="BtnGetApiName_Click" RenderTransformOrigin="0.75,0.532" Margin="102,137,0,0"/>
+                    <Button Content="生成函数" x:Name="BtnGetApiName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Height="20" Click="BtnGetApiName_Click" RenderTransformOrigin="0.75,0.532" Margin="173,137,0,0"/>
+                    <Label Content="类名称" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.392,0.533"/>
                 </Grid>
             </TabItem>
             <TabItem Header="新建项目">
                 <Grid Background="White">
+                    <Label Content="保存地址" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32" Margin="-1,87,0,0"/>
+                    <TextBox  VerticalContentAlignment="Center"  x:Name="Tbox_ProjectPath"  HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="260" Margin="57,47,0,0"/>
+                    <Button VerticalContentAlignment="Center" Content=" 〉" x:Name="Btn_ProSelecter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="18" Height="20" Click="Btn_ProSelecter_Click" Margin="316,88,0,0"  />
 
-                    <Button Content="生成Model" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click_1" Margin="181,136,0,0"/>
+                    <Label Content="项目名称" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="0.4,2.32" Margin="-1,47,0,0"/>
+                    <TextBox  VerticalContentAlignment="Center"  x:Name="Tbox_ProjectName"  HorizontalAlignment="Left" Height="21"  TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="260" Margin="56,87,0,0" />
 
 
-                    <Button Content="一键生成项目" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="81" Height="21" Click="Button_Click_1" Margin="64,136,0,0"/>
+                    <Button Content="生成Model" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="79" Height="20" Click="Button_Click_1" Margin="190,121,0,0"/>
+
+
+                    <Button Content="一键生成项目" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="81" Height="21" Click="Button_Click_1" Margin="59,120,0,0"/>
 
                 </Grid>
             </TabItem>

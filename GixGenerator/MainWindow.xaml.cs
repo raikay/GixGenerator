@@ -17,7 +17,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Forms;
 using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace GixGenerator
@@ -353,6 +352,24 @@ namespace GixGenerator
             Hyperlink link = sender as Hyperlink;
             //link.NavigateUri = new Uri("https://github.com/raikay/GixGenerator");
             Process.Start(new ProcessStartInfo("https://github.com/raikay/GixGenerator"));
+        }
+
+        private void Btn_ProSelecter_Click(object sender, RoutedEventArgs e)
+        {
+            SelectFilePath(Tbox_ProjectName);
+        }
+
+        private void SelectFilePath(TextBox sender)
+        {
+            System.Windows.Forms.FolderBrowserDialog openFileDialog = new System.Windows.Forms.FolderBrowserDialog();  //选择文件夹
+
+            openFileDialog.Description = "选择文件夹";
+            openFileDialog.SelectedPath = sender.Text;
+
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                sender.Text = openFileDialog.SelectedPath;
+            }
         }
     }
 }
